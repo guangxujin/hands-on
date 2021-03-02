@@ -7,7 +7,8 @@ library(patchwork)
 setwd("~/Downloads/Lecture_March 1st and 3rd/Install_packages/seurat")
 # Load the PBMC dataset
 pbmc.data <- Read10X(data.dir = "../data/pbmc3k/filtered_gene_bc_matrices/hg19/")
-
+#save(pbmc.data,file='pbmc.data.RData')
+load("pbmc.data.RData")
 # Initialize the Seurat object with the raw (non-normalized data).
 pbmc <- CreateSeuratObject(counts = pbmc.data, project = "pbmc3k", min.cells = 3, min.features = 200)
 pbmc
